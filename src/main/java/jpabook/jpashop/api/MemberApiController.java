@@ -66,8 +66,8 @@ public class MemberApiController {
 			@PathVariable("id") Long id,
 			@RequestBody @Valid updateMemberRequest request) {
 
-		memberService.update(id, request.getName()); //커맨드
-		Member findMember = memberService.findOne(id); //쿼리
+		memberService.update(id, request.getName());
+		Member findMember = memberService.findOne(id);
 		return new UpdateMemberResponse(findMember.getId(), findMember.getName());
 	}
 
